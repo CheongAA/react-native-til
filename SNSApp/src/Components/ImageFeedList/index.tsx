@@ -43,7 +43,7 @@ const ImageFeedList = ({
   return (
     <FlatList
       data={feedList}
-      style={{width}}
+      style={{ width }}
       keyExtractor={(item, index) => {
         return `image-feed-${id}-${index}`;
       }}
@@ -57,7 +57,7 @@ const ImageFeedList = ({
       refreshing={loading}
       onScroll={onScroll}
       scrollEventThrottle={400}
-      renderItem={({item, index}) => (
+      renderItem={({ item, index }) => (
         <ImageContainer
           style={{
             paddingLeft: index % 3 === 0 ? 0 : 1,
@@ -65,8 +65,8 @@ const ImageFeedList = ({
           }}
           onPress={onPress}>
           <Image
-            source={{uri: item.images[0]}}
-            style={{width: imageWidth, height: imageWidth}}
+            source={{ uri: item.images[0] }}
+            style={{ width: imageWidth, height: imageWidth }}
           />
         </ImageContainer>
       )}

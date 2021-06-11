@@ -1,5 +1,5 @@
 import React from 'react';
-import {ImageSourcePropType} from 'react-native';
+import { ImageSourcePropType } from 'react-native';
 import Styled from 'styled-components/native';
 
 const Container = Styled.TouchableOpacity`
@@ -26,12 +26,15 @@ interface Props {
   onPress?: () => void;
 }
 
-const Tab = ({selected, label, imageSource, onPress}: Props) => {
+const Tab = ({ selected, label, imageSource, onPress }: Props) => {
   let color: string = selected ? '#292929' : '#929292';
 
   return (
-    <Container activeOpacity={1} style={{borderColor: color}} onPress={onPress}>
-      {label && <Label style={{color: color}}>{label}</Label>}
+    <Container
+      activeOpacity={1}
+      style={{ borderColor: color }}
+      onPress={onPress}>
+      {label && <Label style={{ color: color }}>{label}</Label>}
       {imageSource && <TabImage source={imageSource} />}
     </Container>
   );

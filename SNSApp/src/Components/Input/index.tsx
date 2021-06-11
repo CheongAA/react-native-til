@@ -35,7 +35,7 @@ const Input = ({
 }: Props) => {
   return (
     <Container style={style}>
-        <InputField
+      <InputField
         selectionColor="#292929"
         secureTextEntry={secureTextEntry}
         keyboardType={keyboardType ? keyboardType : 'default'}
@@ -46,7 +46,7 @@ const Input = ({
         placeholder={placeholder}
         clearButtonMode={clearMode ? 'while-editing' : 'never'}
         onChangeText={onChangeText}
-        />
+      />
     </Container>
   );
 };

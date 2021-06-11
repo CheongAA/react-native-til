@@ -1,5 +1,5 @@
 import React from 'react';
-import {FlatList} from 'react-native';
+import { FlatList } from 'react-native';
 
 import Styled from 'styled-components/native';
 
@@ -32,7 +32,7 @@ interface Props {
   storyList: Array<IFeed>;
 }
 
-const StoryList = ({storyList}: Props) => {
+const StoryList = ({ storyList }: Props) => {
   return (
     <FlatList
       data={storyList}
@@ -41,15 +41,15 @@ const StoryList = ({storyList}: Props) => {
       keyExtractor={(item, index) => {
         return `story-${index}`;
       }}
-      renderItem={({item, index}) => (
+      renderItem={({ item, index }) => (
         <StoryContainer>
           <Story>
             <StoryBackground
               source={require('~/Assets/Images/story_background.png')}
             />
             <StoryImage
-              source={{uri: item.photo}}
-              style={{width: 52, height: 52}}
+              source={{ uri: item.photo }}
+              style={{ width: 52, height: 52 }}
             />
           </Story>
           <StoryName numberOfLines={1}>{item.name}</StoryName>

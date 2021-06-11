@@ -1,9 +1,9 @@
-import React, { useContext, useEffect } from 'react';
+import React, {useContext, useEffect} from 'react';
 import Styled from 'styled-components/native';
-import { StackNavigationProp } from '@react-navigation/stack';
+import {StackNavigationProp} from '@react-navigation/stack';
 import SplashScreen from 'react-native-splash-screen';
 
-import { UserContext } from '~/Context/User';
+import {UserContext} from '~/Context/User';
 
 import Input from '~/Components/Input';
 import Button from '~/Components/Button';
@@ -94,7 +94,7 @@ const Login = ({navigation}: Props) => {
         </SignupText>
       </FormContainer>
       <Footer>
-        <Copyright>SNSApp from Chegona A</Copyright>
+        <Copyright>SNSApp from dev-yakuza</Copyright>
       </Footer>
     </Container>
   );

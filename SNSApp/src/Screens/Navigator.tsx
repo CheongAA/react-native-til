@@ -29,7 +29,7 @@ const LoginNavigator = () => {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="Login" component={Login} />
-      <Stack.Screen name="Sigbup" component={Signup} />
+      <Stack.Screen name="Signup" component={Signup} />
       <Stack.Screen name="PasswordReset" component={PasswordReset} />
     </Stack.Navigator>
   );
@@ -88,9 +88,7 @@ const ProfileTab = () => {
       <Stack.Screen
         name="Profile"
         component={Profile}
-        options={{
-          title: 'Profile',
-        }}
+        options={{title: 'Profile'}}
       />
     </Stack.Navigator>
   );
@@ -98,10 +96,7 @@ const ProfileTab = () => {
 
 const MainTabs = () => {
   return (
-    <BottomTab.Navigator
-      tabBarOptions={{
-        showLabel: false,
-      }}>
+    <BottomTab.Navigator tabBarOptions={{showLabel: false}}>
       <BottomTab.Screen
         name="MyFeed"
         component={MyFeedTab}
@@ -111,7 +106,7 @@ const MainTabs = () => {
               source={
                 focused
                   ? require('~/Assets/Images/Tabs/ic_home.png')
-                  : require('~/Assets/Images/Tabs/ic_home_outlone.png')
+                  : require('~/Assets/Images/Tabs/ic_home_outline.png')
               }
             />
           ),
@@ -126,7 +121,7 @@ const MainTabs = () => {
               source={
                 focused
                   ? require('~/Assets/Images/Tabs/ic_search.png')
-                  : require('~/Assets/Images/Tabs/ic_search_outlone.png')
+                  : require('~/Assets/Images/Tabs/ic_search_outline.png')
               }
             />
           ),
@@ -142,7 +137,7 @@ const MainTabs = () => {
               source={
                 focused
                   ? require('~/Assets/Images/Tabs/ic_add.png')
-                  : require('~/Assets/Images/Tabs/ic_add_outlone.png')
+                  : require('~/Assets/Images/Tabs/ic_add_outline.png')
               }
             />
           ),
@@ -157,7 +152,7 @@ const MainTabs = () => {
               source={
                 focused
                   ? require('~/Assets/Images/Tabs/ic_favorite.png')
-                  : require('~/Assets/Images/Tabs/ic_favorite_outlone.png')
+                  : require('~/Assets/Images/Tabs/ic_favorite_outline.png')
               }
             />
           ),
@@ -171,8 +166,8 @@ const MainTabs = () => {
             <Image
               source={
                 focused
-                  ? require('~/Assets/Images/Tabs/ic_Profile.png')
-                  : require('~/Assets/Images/Tabs/ic_Profile_outlone.png')
+                  ? require('~/Assets/Images/Tabs/ic_profile.png')
+                  : require('~/Assets/Images/Tabs/ic_profile_outline.png')
               }
             />
           ),
@@ -187,7 +182,7 @@ const MainNavigator = () => {
     <Drawer.Navigator
       drawerPosition="right"
       drawerType="slide"
-      drawerContent={props => <CustomDrawer props={props} />}>
+      drawerContent={(props) => <CustomDrawer props={props} />}>
       <Drawer.Screen name="MainTabs" component={MainTabs} />
     </Drawer.Navigator>
   );
@@ -196,7 +191,7 @@ const MainNavigator = () => {
 export default () => {
   const {isLoading, userInfo} = useContext<IUserContext>(UserContext);
 
-  if (!isLoading) {
+  if (isLoading === false) {
     return <Loading />;
   }
 

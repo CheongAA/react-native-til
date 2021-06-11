@@ -3,10 +3,10 @@ import {ActivityIndicator} from 'react-native';
 import Styled from 'styled-components/native';
 
 const Container = Styled.View`
-    flex: 1;
-    background-color: #FEFFFF;
-    align-items: center;
-    justify-content: center;
+  flex: 1;
+  background-color: #FEFFFF;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Loading = () => {
